@@ -1,6 +1,7 @@
 node_modules
 
 .env
+.vscode
 
 tmp/uploads/*
 !tmp/uploads/.gitkeep
