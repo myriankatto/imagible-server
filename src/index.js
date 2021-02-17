@@ -17,6 +17,12 @@ mongoose.connect(process.env.MONGO_URL, {
   useCreateIndex: true,
 });
 
+// CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
+app.all('*', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://localhost:3000');
+  next();
+});
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
