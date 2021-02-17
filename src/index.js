@@ -1,10 +1,10 @@
 require('dotenv').config();
-import cors from 'cors';
 
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
