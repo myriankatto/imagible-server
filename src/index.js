@@ -27,7 +27,12 @@ app.use(function (req, res, next) {
     'Authorization, Origin,X-Requested-With,Content-Type,Accept,content-type,application/json'
   );
 
-  next();
+  // intercept OPTIONS method
+  if ('OPTIONS' == req.method) {
+    res.send(200);
+  } else {
+    next();
+  }
 });
 
 app.use(cors());
@@ -39,4 +44,3 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')
 app.use(require('./routes'));
 
 app.listen(process.env.PORT || 3001);
-
