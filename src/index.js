@@ -17,14 +17,11 @@ mongoose.connect(process.env.MONGO_URL, {
   useCreateIndex: true,
 });
 
-
-app.use(cors());
-
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
 app.use(function (req, res, next) {
-  res.append('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.append('Access-Control-Allow-Headers', 'Content-Type');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
 
   // intercept OPTIONS method
   if ('OPTIONS' == req.method) {
@@ -34,6 +31,7 @@ app.use(function (req, res, next) {
   }
 });
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
