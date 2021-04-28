@@ -20,8 +20,11 @@ mongoose.connect(process.env.MONGO_URL, {
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Credentials', true);
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
+  res.header(
+    'Access-Control-Allow-Headers", "Access-Control-*, Origin, X-Requested-With, Content-Type, Accept'
+  );
 
   // intercept OPTIONS method
   if ('OPTIONS' == req.method) {
