@@ -16,8 +16,7 @@ mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useCreateIndex: true,
 });
-
-app.use(cors({ origin: true }));
+app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
