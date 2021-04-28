@@ -31,6 +31,8 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(cors({ origin: true }));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
