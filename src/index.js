@@ -18,18 +18,15 @@ mongoose.connect(process.env.MONGO_URL, {
 });
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
-app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
-  );
-  next();
-});
-
-app.use(cors());
-app.options('*', cors());
+app.use(
+  cors({
+    allowedHeaders: ['sessionId', 'Content-Type'],
+    exposedHeaders: ['sessionId'],
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
