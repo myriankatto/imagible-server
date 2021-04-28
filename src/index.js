@@ -17,16 +17,6 @@ mongoose.connect(process.env.MONGO_URL, {
   useCreateIndex: true,
 });
 
-// CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
-app.use(
-  cors({
-    allowedHeaders: ['sessionId', 'Content-Type'],
-    exposedHeaders: ['sessionId'],
-    origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
-  })
-);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
