@@ -28,6 +28,7 @@ app.use(function (req, res, next) {
   // Request headers you wish to allow
   res.header(
     'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Origin',
     'X-Requested-With, X-HTTP-Method-Override, Content-Type, Accept'
   );
 
