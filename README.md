@@ -1,9 +1,16 @@
+<!-- VARS -->
+[client-badge]: https://github.com/myriankatto/imagible/blob/master/src/assets/client.png?raw=true
+[server-badge]: https://github.com/myriankatto/imagible/blob/master/src/assets/server.png?raw=true
 
+<!-- VARS -->
 <div align="center">
     <img alt="Imagible" title="Imagible" src="https://github.com/myriankatto/imagible/blob/master/src/assets/header.png?raw=true" height='350' /></br></br>
     Imagible is a open source project born to create accessible images for all. </br>
 
-This project uses Artificial Intelligence from [Microsoft Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/).
+This project uses Artificial Intelligence from [Microsoft Computer Vision](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/).</br></br>
+[![Client][client-badge]](https://github.com/myriankatto/imagible)
+[![Server][server-badge]](https://github.com/myriankatto/imagible-server)
+
 </div>
 
 # :pushpin:  Table of Contents
