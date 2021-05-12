@@ -19,14 +19,14 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Add headers
 app.use(function (req, res, next) {
-  // Website you wish to allow to connect
-  res.header('Access-Control-Allow-Origin', 'http://imagible.herokuapp.com');
-
-  // Request methods you wish to allow
+  res.header('Access-Control-Allow-Origin', 'https://imagible.app');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Access-Control-Allow-Origin',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
 
-
-  // Pass to next layer of middleware
   next();
 });
 
