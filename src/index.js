@@ -11,11 +11,14 @@ const app = express();
 /**
  * Database setup
  */
-mongoose.connect(process.env.MONGO_URL, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-  useCreateIndex: true,
-});
+mongoose
+  .connect(process.env.MONGO_URL, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true,
+  })
+  .then(() => console.log('Database Connected'))
+  .catch((err) => console.log(err));
 
 // Add headers
 app.use(function (req, res, next) {
