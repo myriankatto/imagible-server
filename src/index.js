@@ -18,7 +18,7 @@ mongoose
     useCreateIndex: true,
   })
   .then(() => console.log('Database Connected'))
-  .catch((err) => console.log('Database not Connected'));
+  .catch((err) => console.log(err));
 
 // Add headers
 app.use(function (req, res, next) {
