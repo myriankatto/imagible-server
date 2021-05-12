@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 // Add headers
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'https://imagible.app');
+  res.header('Access-Control-Allow-Origin', 'https://www.imagible.app');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   res.header(
     'Access-Control-Allow-Headers',
